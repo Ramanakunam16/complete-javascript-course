@@ -252,74 +252,76 @@ if(friends.includes('Divya')){
 console.log('You have friend called Divya');
 
 }
-*/
+
 
 // Objects
+
 // object contains key or property - value pairs.Property holds the data. The key  similar to varibales.
 
-// const ramana = {
-//   firstName: "ramana",
-//   lastName: "Kunam",
-//   age: 2023 - 2001,
-//   job: "Student",
-//   friends: ["Ramana", "Naidu", "Gayatri", "Mounica", "Phani"],
-// };
+const ramana = {
+  firstName: "ramana",
+  lastName: "Kunam",
+  age: 2023 - 2001,
+  job: "Student",
+  friends: ["Ramana", "Naidu", "Gayatri", "Mounica", "Phani"],
+};
 
-// // Objects are unordered data structure unlike arrays,Arrays are strictly ordered data structure.
+// Objects are unordered data structure unlike arrays,Arrays are strictly ordered data structure.
 
-// // dot vs. Bracket Notation
+// dot vs. Bracket Notation
 
-// console.log(ramana);
-// //  We can get data from objects by property name.
+console.log(ramana);
+//  We can get data from objects by property name.
 
-// // By dot notation
-// //   ' . ' is actually a operator
+// By dot notation
+//   ' . ' is actually a operator
 
-// console.log(ramana.lastName);
+console.log(ramana.lastName);
 
-// // By bracket notation
+// By bracket notation
 
-// console.log(ramana["lastName"]); // operator basically an expression
+console.log(ramana["lastName"]); // operator basically an expression
 
-// const nameKey = "Name";
-// console.log(ramana["first" + nameKey]);
-// console.log(ramana["last" + nameKey]);
+const nameKey = "Name";
+console.log(ramana["first" + nameKey]);
+console.log(ramana["last" + nameKey]);
 
-// // console.log(jonas.'first' + nameKey);
+// console.log(jonas.'first' + nameKey);
 
-// const interestesIN = prompt(
-//   "What do you want to know about Ramana? Choose between firstName, lastName, age, job, friends"
-// );
+const interestesIN = prompt(
+  "What do you want to know about Ramana? Choose between firstName, lastName, age, job, friends"
+);
 
-// console.log(ramana["interestesIN"]);
+console.log(ramana["interestesIN"]);
 
-// if (ramana["interestesIN"]) {
-//   console.log(job["interestesIN"]);
-// } else {
-//   console.log(
-//     "Wrong request! Choose between firstName, lastName, age, job, friends. "
-//   );
-// }
+if (ramana["interestesIN"]) {
+  console.log(job["interestesIN"]);
+} else {
+  console.log(
+    "Wrong request! Choose between firstName, lastName, age, job, friends. "
+  );
+}
 
-// // adding new properties to object using both the notaions.
+// adding new properties to object using both the notaions.
 
-// ramana.location = "India";
-// ramana["insta"] = "@_chinna16_";
-// console.log(ramana);
+ramana.location = "India";
+ramana["insta"] = "@_chinna16_";
+console.log(ramana);
 
-// // Challenge
+// Challenge
 
-// // log to console this statement : "ramana has 5 friends, and his best friend is Gayatri ."
+// log to console this statement : "ramana has 5 friends, and his best friend is Gayatri ."
 
-// console.log(
-//   `${ramana.firstName} has ${ramana.friends.length} friends , and his best friend is ${ramana.friends[2]}.`
-// );
+console.log(
+  `${ramana.firstName} has ${ramana.friends.length} friends , and his best friend is ${ramana.friends[2]}.`
+);
 
 // Object methods
+
 // They can hold objects inside objects
 // We already know that functions are values which we can jeven create  a key value pair with this fuction values and that means we can add fuctions to objects.
 
-const ramana = {
+// const ramana = {
   firstName: "ramana",
   lastName: "Kunam",
   birthYear: 2001,
@@ -342,4 +344,90 @@ ramana.calcAge();
 console.log(ramana.age);
 // console.log(ramana["calcAge"](ramana.birthYear));
 
-//challenge
+//challenge #3
+
+const john = {
+  fullName: "john smit",
+  mass: 92,
+  height: 1.95,
+  calBMI: function () {
+    this.johnBMI = this.mass / this.height ** 2;
+    return this.johnBMI;
+  },
+};
+const mark = {
+  fullName: "mark miller",
+  mass: 78,
+  height: 1.69,
+  calBMI: function () {
+    this.markBMI = this.mass / this.height ** 2;
+    return this.markBMI;
+  },
+};
+john.calBMI();
+mark.calBMI();
+if (john.johnBMI > mark.markBMI) {
+  console.log(
+    `John's BMI ${john.johnBMI} is higher than Marks's ${mark.markBMI}!`
+  );
+} else if (john.johnBMI < mark.markBMI) {
+  console.log(
+    `mark's BMI ${mark.markBMI} is higher than john's ${john.johnBMI}!`
+  );
+} else {
+  console.log(
+    `Both mark's BMI ${mark.markBMI} and john's ${john.johnBMI} has equal BMI`
+  );
+}
+*/
+// Iteration The for loop
+
+//for loop keeps running while condition is true
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition:${rep}`);
+}
+
+// Looping arrays
+const friends = ["Ramana", "Naidu", "Gayatri", "Mounica", "Phani"];
+
+const firstName = "Ramana";
+const ramana = [firstName, "Kunam", 2023 - 2001, "Student", friends];
+
+const types = [];
+
+for (let i = 0; i < ramana.length; i++) {
+  // Reading from ramana array
+  console.log(ramana[i], typeof ramana[i]);
+
+  //filling types array
+  //   types[i] = typeof ramana[i];
+
+  types.push(typeof ramana[i]);
+}
+console.log(types);
+
+const years = [1999, 2000, 2001, 2003];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2023 - years[i]);
+}
+console.log(ages);
+
+// Continue and Break
+
+// contunue is to exit the current iteration of the loop and continue to next one.
+//break is used to completly terminate whole loop.
+
+// for only string
+for (let i = 0; i < ramana.length; i++) {
+  if (typeof ramana[i] !== "string") continue;
+  // Reading from ramana array
+  console.log(ramana[i], typeof ramana[i]);
+}
+
+for (let i = 0; i < ramana.length; i++) {
+  if (typeof ramana[i] === "object") break;
+  // Reading from ramana array
+  console.log(ramana[i], typeof ramana[i]);
+}
