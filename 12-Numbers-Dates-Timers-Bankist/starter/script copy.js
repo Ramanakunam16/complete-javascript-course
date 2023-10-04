@@ -62,8 +62,6 @@ const labelSumInterest = document.querySelector('.summary__value--interest');
 const labelTimer = document.querySelector('.timer');
 
 const containerApp = document.querySelector('.app');
-
-const message = document.querySelector('.message');
 const containerMovements = document.querySelector('.movements');
 
 const btnLogin = document.querySelector('.login__btn');
@@ -144,7 +142,7 @@ const calcDisplaySummary = acc => {
       return acc + mov;
     }, 0);
 
-  const interest = acc.movements
+  const interest = movements
     .filter(mov => mov > 0)
     .map(deposite => (deposite * acc.interestRate) / 100)
     .filter(int => int >= 1)
@@ -324,121 +322,3 @@ btnSort.addEventListener('click', e => {
 // LECTURES
 
 //Converting checking numbers
-
-// in JavaScript all number will present internally as a floting point numbers
-
-console.log(23 === 23.0); //it will return true
-
-// numbers are reprensinted internally in a 64 base 2 format aslo know as binary fromat (0 and 1).in binary fromat ti is very hard to represent some fractions that are very easy to reprensent in base 10 system(base 10 basically the numbers from 0 to 9)
-
-console.log(7 / 10 + 1 / 10);
-
-// working with numbers
-
-console.log(Number('23'));
-console.log(+'23'); // we can use + operator to convert string to number.+ operator do type coercion it will convert all operand to numbers
-
-//Parsing an number
-
-console.log(Number.parseInt('30px', 10)); //string must starts with number to parse an string
-console.log(Number.parseInt('e20')); //it does not work string must start with and number to parse.
-
-// parseInt method accept second argument which is so called regex
-
-// regex:it is a base of numeral systembthat we are using (base 2 or 64 base 10)
-
-// we can also parse an floating point number using parseFloat();
-
-console.log(Number.parseFloat('2.5em'));
-// the parseInt nad parseFloat() functions are so called gobal functions we use these functions without Number function or object(functions are also a object)
-
-// here Number provide some thing called namepace in this namepace we have this functions to operate.
-
-// Another function of Number namepace
-
-// isNaN() :is Not a Number
-
-console.log(Number.isNaN(23));
-console.log(Number.isNaN('23'));
-
-console.log(Number.isNaN(+'23px')); //true it returns NaN
-console.log(Number.isNaN(23 / 0));
-
-// better method to check for a number
-
-// isFinite()
-// we use this method mainly for floating point numbers
-console.log(Number.isFinite(23 / 0)); //false
-console.log(Number.isFinite(23)); //true
-
-// when we need to check for only an integer
-
-// we use isInteger()
-
-console.log(Number.isInteger(23));
-
-//  Math function and Rounding Numbers
-
-console.log(Math.sqrt(25));
-
-//we also do this
-
-console.log(25 ** (1 / 2));
-console.log(8 ** (1 / 3));
-
-// max and min values
-
-console.log(Math.max(1, 2, 3, 45, 6)); //returns 45
-console.log(Math.max(1, '67', 7, 8)); //it returns 67 because it performs type corecion but it doesnt perform parsing
-console.log(Math.max(1, '67px', 7, 8)); //it returns NaN
-
-console.log(Math.min(1, 2, 3, 45, 6));
-
-// In Math namepace we also have constant some thing like pi values
-
-console.log(Math.PI * Number.parseFloat('100px')); //it returns exact pi value // pi value x 10
-
-// random()
-
-console.log(Math.trunc(Math.random() * 6) + 1); //it generate random number from 1 to 6 at each time
-
-// to generate random numbers between two number
-
-const randomNum = (min, max) => {
-  return Math.floor(Math.random() * (max - min) + 1) + min;
-};
-console.log(randomNum(10, 20));
-
-//Rounding Integers
-console.log(Math.trunc(23.4));
-console.log(Math.ceil(23.9));
-console.log(Math.floor(23.4));
-console.log(Math.round(23.8));
-
-console.log(Math.trunc(-23.6)); // it supposed to be -24 but it returns -23
-console.log(Math.floor(-23.6)); //it better to use floor to avoid unneccessery  bugs because that wired behaviour of trunc when it comes to negative integers
-
-// Rounding Floating number
-
-console.log(+(2.6).toFixed(2)); // we can config decimal point with this method .
-//here something called boxing is happend because on primitive types we cant use methods
-
-// i want to learn abot boxing later
-
-// Reminder operator (%)
-
-// practice later(i have good understand in it so).i want to play with some for futhure.
-
-// Numeric separators
-
-//es6 introduced numeric sparators to make our code more understandable to other programmers
-
-// like reading price using thousand separators
-
-// we can use underscore to specifie a thousand separater.it doesnot effect the value at all but it does not work on string itself
-
-const price = 24_000_000; //it is some what readable like 24 millions like that
-
-// NOT  works on string
-
-console.log(parseInt('24_000_000 ')); //it returns 24
